@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.14)
+project(cuda_kernels LANGUAGES CXX CUDA)
+find_package(CUDA REQUIRED)
+include_directories(include)
+add_library(attention_kernels src/attention.cu)
+target_link_libraries(attention_kernels ${CUDA_LIBRARIES})
